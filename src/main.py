@@ -14,6 +14,7 @@
 
 #app.exec_()
 
+import SyllabusDivider
 import numpy as np
 
 # Transliteration method
@@ -100,11 +101,13 @@ print("1. Greek")
 antiqueLanguage = input()
 if antiqueLanguage=="1":
     print("We want to be greek !")
-    print("Which word to transliterate ?")
-    wordToTransliterate = input()
-    #print(latinToGreekAlphabet("a"))
-    print(latinSongToGreekAlphabet(wordToTransliterate))
-    print(greekAlphabetToUpperCase("\u03c0"))
+    while(True):
+        print("Which word to transliterate ?")
+        wordToTransliterate = input()
+        #print(latinToGreekAlphabet("a"))
+        #print(latinSongToGreekAlphabet(wordToTransliterate))
+        #print(greekAlphabetToUpperCase("\u03c0"))
+        SyllabusDivider.divideFrenchWord(wordToTransliterate)
 
 else:
     print("Aarh, I am to ignorant to speak that")
