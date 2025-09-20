@@ -1,0 +1,33 @@
+# application.rc
+#
+# resource file for "AntiqueTransliterator"
+
+# Buttons style
+style "button"
+{
+# BackGround Colors
+#                  Red  Green  Blue
+  bg[PRELIGHT] = { 0.0,  0.75, 0.0 } # Green when the mouse is on
+                                     # the button
+  bg[ACTIVE]   = { 0.75, 0.0,  0.0 } # Red on click
+# ForeGround Colors
+#                  Red  Green  Blue
+  fg[PRELIGHT] = { 1.0,  1.0,  1.0 } # White when the mouse is on
+                                     # the button
+  fg[ACTIVE]   = { 1.0,  1.0,  1.0 } # White on click
+}
+
+# All the buttons will have the style "button"
+widget_class "*GtkButton*" style "button"
+
+# Text style
+style "text"
+{
+  font = "-adobe-courier-medium-r-normal-*-15-*-*-*-*-*-*-*"
+  text[NORMAL] = { 0.0, 0.0, 0.0 } # black
+  fg[NORMAL]   = { 0.0, 0.0, 0.0 } # black
+  base[NORMAL] = { 1.0, 1.0, 1.0 } # white : background color
+}
+
+# All Gtk_Text will have the "text" style
+widget_class "*GtkText" style "text"

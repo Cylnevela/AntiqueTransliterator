@@ -1,7 +1,11 @@
 with Alphabet;
+with Ada.Containers.Vectors;
 
 package GreekAlphabet is
+
    subtype GreekLetter is Alphabet.Letter;
+
+   function "="(Left, Right : GreekLetter) return Boolean;
 
 -- Capital letter
    GreekAlpha : GreekLetter := (Name => Alphabet.PkgName.To_Bounded_String ("Alpha"),
@@ -17,13 +21,13 @@ package GreekAlphabet is
                            Sound => Alphabet.PkgSound.To_Bounded_String ("d"),
                            Symbol => Alphabet.PkgUnicode.To_Bounded_String ("\u03b4"));
    GreekEpsilon : GreekLetter := (Name => Alphabet.PkgName.To_Bounded_String ("Epsilon"),
-                           Sound => Alphabet.PkgSound.To_Bounded_String ("e"), --é
+                           Sound => Alphabet.PkgSound.To_Bounded_String ("é"),
                            Symbol => Alphabet.PkgUnicode.To_Bounded_String ("\u03b5"));
    GreekDzeta : GreekLetter := (Name => Alphabet.PkgName.To_Bounded_String ("Dzeta"),
                            Sound => Alphabet.PkgSound.To_Bounded_String ("dz"),
                            Symbol => Alphabet.PkgUnicode.To_Bounded_String ("\u03b6"));
    GreekEta : GreekLetter := (Name => Alphabet.PkgName.To_Bounded_String ("Eta"),
-                           Sound => Alphabet.PkgSound.To_Bounded_String ("e"),-- è
+                           Sound => Alphabet.PkgSound.To_Bounded_String ("è"),
                            Symbol => Alphabet.PkgUnicode.To_Bounded_String ("\u03b7"));
    GreekTheta : GreekLetter := (Name => Alphabet.PkgName.To_Bounded_String ("Theta"),
                            Sound => Alphabet.PkgSound.To_Bounded_String ("th"),
@@ -77,13 +81,11 @@ package GreekAlphabet is
                            Sound => Alphabet.PkgSound.To_Bounded_String ("ps"),
                            Symbol => Alphabet.PkgUnicode.To_Bounded_String ("\u03c8"));
    GreekOmega : GreekLetter := (Name => Alphabet.PkgName.To_Bounded_String ("Omega"),
-                           Sound => Alphabet.PkgSound.To_Bounded_String ("oo"),--ô
+                           Sound => Alphabet.PkgSound.To_Bounded_String ("ô"),
                            Symbol => Alphabet.PkgUnicode.To_Bounded_String ("\u03c9"));
 
-   --, Beta_, Gamma_, Delta_, Epsilon_,
-   --   Dzeta_, Eta_, Theta_, Iota_, Kappa_,
-   --   Lambda_, Mu_, Nu_, Xi_, Omicron_,
-   --   Pi_, Rho_, Sigma_, Tau_, Upsilon_,
-   --   Phi_, Khi_, Psi_, Omega_)
+   package GreekWord is new Ada.Containers.Vectors
+       (Index_Type   => Natural,
+        Element_Type => GreekLetter);
 
 end GreekAlphabet;  
