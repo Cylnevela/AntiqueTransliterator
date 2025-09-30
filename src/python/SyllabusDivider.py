@@ -4,8 +4,8 @@ consonnes = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v'
 
 # print the word with space between each syllabus
 def divideFrenchWord(word):
-    print("First hypothesis : each voyelle and consonne alternate")
     syllabus = ""
+    listOfSyllabus = {}
     endOfWordReach = False
     j=len(word)
     for i in range(len(word)):
@@ -22,3 +22,5 @@ def divideFrenchWord(word):
                 syllabus = ""
             else:
                 syllabus += word[i]
+    
+    return listOfSyllabus

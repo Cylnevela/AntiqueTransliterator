@@ -10,9 +10,14 @@ Antique languages available :
 
 ## How to launch it
 To launch the transliterator, use the following command :
+For the Ada version :
+main.exe
+
+For the python version :
 py main.py
 
 Then follow the instructions.
 
 ## Requirements
 This tools requires PyQt5
+or the gnat toolchain
