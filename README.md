@@ -8,6 +8,14 @@ Antique languages available :
 - Greek
 - Linear-B
 
+## How to build it
+To build the transliterator, use the following command :
+For the Ada version :
+gnatmake .\src\Ada\main.adb
+
+or :
+gprbuild -P .\src\Ada\AntiqueTransliterator.gpr
+
 ## How to launch it
 To launch the transliterator, use the following command :
 For the Ada version :

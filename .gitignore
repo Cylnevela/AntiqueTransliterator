@@ -1,0 +1,8 @@
+# Ignore binding/lining files
+*.ali
+*.o
+*.pyc
+
+# Ignore exec files
+*.exe
+
